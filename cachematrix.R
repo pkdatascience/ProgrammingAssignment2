@@ -3,7 +3,12 @@
 #'@author Priyesh Kannan
 #'@description Builds necessary data structure to capture the input ,
 #'and provides necessary infrastructure for caching the inverse of matrix
+#'@return A list with input data matrix and placeholder for caching the inverse.
 #'@export makeCacheMatrix
+#'@example
+#'mat<-makeCacheMatrix(rnorm(9,3,3)) # assuming the matrix generted is invertible
+#'mat$get()  # retrives the input matrix
+#'mat$getInverse() # retrives the inverse of matrix
 #'
 makeCacheMatrix <- function(x = matrix()) {
     inverse <-  NULL
@@ -24,10 +29,13 @@ makeCacheMatrix <- function(x = matrix()) {
 #'@description This function computes the inverse of the special "matrix" returned by makeCacheMatrix.
 #'If the inverse has already been calculated (and the matrix has not changed),
 #'then the cachesolve should retrieve the inverse from the cache.
+#'@seealso \code{\link{solve}} which this function wraps
 #'@export cacheSolve
+#'
 #' @example
 #' mat_data<-makeCacheMatrix(matrix(rnorm(9),3,3))
 #' inverse<-cacheSolve(mat_data)
+#'
 #'
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'

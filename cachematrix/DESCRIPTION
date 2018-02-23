@@ -1,0 +1,10 @@
+Package: cachematrix
+Type: Package
+Title: Cache the inverse of a matrix
+Version: 1.0
+Date: 2018-02-23
+Author: Priyesh Kannan
+Maintainer: Priyesh Kannan <noemail@noemail.com>
+Description: Used to cache the inverse of a matrix.
+License: GPL-3
+RoxygenNote: 6.0.1
